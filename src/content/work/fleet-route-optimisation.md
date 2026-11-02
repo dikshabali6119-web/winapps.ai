@@ -4,6 +4,7 @@ order: 4
 image: ../../assets/images/work/fleet-route-optimisation.jpg
 imageAlt: Truck on an open highway
 sector: Logistics
+domains: [logistics]
 disciplines: [Platform, ML]
 problem: Dispatch, drivers and customers needed one real-time view of a delivery fleet.
 delivered: Real-time tracking, geofencing and ETA prediction, unifying dispatch, drivers and customers on one platform.

@@ -8,7 +8,7 @@
   icon: heart-pulse
   summary: Software that handles sensitive personal data and regulated workflows, where privacy and traceability are requirements, not features.
   focus: [Data protection and GDPR-aligned handling, Mobile tools for field teams, Modernising legacy platforms]
-  relatedWork: [pharma-saas-replatform]
+  relatedWork: [pharma-saas-replatform, running-community-app]
 - id: fintech
   order: 2
   image: ../assets/images/industries/fintech.jpg
@@ -17,6 +17,7 @@
   icon: landmark
   summary: Systems that move money or hold financial data have to be correct, auditable and secure, with least-privilege access as the default.
   focus: [Secure web and mobile products, Data pipelines and reporting, Cloud infrastructure as code]
+  relatedWork: [nbfc-loan-platform, mobile-banking-app]
 - id: manufacturing
   order: 3
   image: ../assets/images/industries/manufacturing.jpg
@@ -25,7 +26,7 @@
   icon: factory
   summary: Computer vision and data systems that work on the factory floor, with traceability for every automated decision.
   focus: [Visual quality inspection, Edge inference, MLOps]
-  relatedWork: [ai-visual-inspection]
+  relatedWork: [ai-predictive-maintenance, ai-visual-inspection, generative-design-heavy-equipment]
 - id: logistics
   order: 4
   image: ../assets/images/industries/logistics.jpg
@@ -34,7 +35,7 @@
   icon: truck
   summary: Real-time platforms that give dispatch, drivers and customers the same picture, and models that predict what happens next.
   focus: [Real-time tracking, Event streaming, ETA and demand prediction]
-  relatedWork: [fleet-route-optimisation]
+  relatedWork: [fleet-route-optimisation, ai-supply-chain-optimisation]
 - id: retail
   order: 5
   image: ../assets/images/industries/retail.jpg
@@ -43,6 +44,7 @@
   icon: shopping-bag
   summary: Customer-facing web and mobile products that have to stay fast and reliable at peak, backed by data your teams can act on.
   focus: [Web and mobile storefront products, Data and analytics, Cloud platforms]
+  relatedWork: [sneaker-commerce-app, retail-erp-omnichannel, ecommerce-crm-personalisation]
 - id: media
   order: 6
   image: ../assets/images/industries/media.jpg
@@ -51,6 +53,7 @@
   icon: clapperboard
   summary: Platforms that serve content to large audiences across web and mobile, where performance and reliability are visible to every user.
   focus: [Web and mobile apps, Cloud and platform engineering, Observability]
+  relatedWork: [ott-streaming-platform, niche-community-network]
 - id: education
   order: 7
   image: ../assets/images/industries/education.jpg
@@ -59,6 +62,7 @@
   icon: graduation-cap
   summary: Learning products for students and staff that are simple to use, accessible and careful with personal data.
   focus: [Web and mobile products, Data protection, Analytics]
+  relatedWork: [adaptive-learning-platform]
 - id: travel
   order: 8
   image: ../assets/images/industries/travel.jpg

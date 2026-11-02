@@ -29,6 +29,7 @@ import {
   TRAINING_PAGE,
   TRUST,
   WORK_DETAIL,
+  WORK_DOMAINS,
   WORK_PAGE,
   headingText,
 } from "../data/copy";
@@ -256,7 +257,7 @@ export async function homeMd(site: Site) {
 
       `## ${headingText(HOME.work)}`,
       HOME.work.intro,
-      bullets(work.map((w) => `${L.page(w.data.title, workPath(w.id))} (${w.data.sector}): ${w.data.delivered}`)),
+      bullets(work.slice(0, 4).map((w) => `${L.page(w.data.title, workPath(w.id))} (${w.data.sector}): ${w.data.delivered}`)),
       L.link(HOME.work.allLink, "/work/"),
 
       `## ${headingText(HOME.process)}`,
@@ -357,7 +358,7 @@ export async function workMd(site: Site) {
       ...work.map((w) =>
         join(
           `## ${w.data.title}`,
-          [w.data.sector, w.data.region].filter(Boolean).join(" · "),
+          [w.data.sector, w.data.region, w.data.domains.map((k) => WORK_DOMAINS[k]).join(", ")].filter(Boolean).join(" · "),
           bullets([`**${WORK_PAGE.card.problem}**: ${w.data.problem}`, `**${WORK_PAGE.card.delivered}**: ${w.data.delivered}`]),
           L.page(`${WORK_PAGE.card.read}: ${w.data.title}`, workPath(w.id))
         )
@@ -433,7 +434,8 @@ export async function industriesMd(site: Site) {
 
 export async function aiMd(site: Site) {
   const L = linker(site);
-  const { hero, services, why, expertise, benefits, solutions, stack, challenges, competencies, cta } = AI_PAGE;
+  const { hero, services, why, expertise, benefits, solutions, stack, challenges, competencies, work, cta } = AI_PAGE;
+  const aiWork = (await getWork()).filter((w) => w.data.domains.includes("ai"));
   const cards = (items: readonly { title: string; text: string }[]) => items.map((i) => join(`### ${i.title}`, i.text));
   return finish(
     join(
@@ -466,6 +468,7 @@ export async function aiMd(site: Site) {
       `## ${headingText(competencies)}`,
       competencies.intro,
       ...cards(competencies.items),
+      aiWork.length > 0 && join(`## ${headingText(work)}`, work.intro, bullets(aiWork.map((w) => L.page(w.data.title, workPath(w.id))))),
       ctaBlock(L, cta.title)
     )
   );

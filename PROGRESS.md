@@ -126,12 +126,15 @@ Tracks every step and sub-item of [WINAPPS_V2_PROMPT.md](WINAPPS_V2_PROMPT.md) a
 
 - No postal address: V1 never published one. It is left out of the JSON-LD, the About facts and llms.txt.
 - Case-study results are `null` in V1, so V1's fallback text is shown.
+- The 16 case studies added on 2026-11-02 come from the live www.winapps.co.in/case-studies data. Its client names and outcome figures (₹/$ savings, percentages) were left out until Winapps approves them; each file has TODOs. They reuse the site's existing sector photos, so some photos repeat across cards.
 - Working hours of 11:00–20:00 IST are a TODO inherited from V1.
 - Client logos and testimonials: V1's collections are empty and hidden, and they stay that way.
 - No course fees, dates or durations in V1, so none appear here.
 - Legal pages carry V1's own TODOs (legal review, jurisdiction).
 
 ## Log
+
+- 2026-11-02 case studies: matched the live /case-studies page (20 case studies, 12 domains). Added the 16 missing ones to `src/content/work`, a `domains` field and domain filter chips on /work (`?domain=ai` links), AI case studies on /ai, industry links, and redirects from every live `/case-studies/<slug>` to its new page. The home page shows the first four. `npm run check` 0/0/0, build clean (77 pages), `npm run qa` all pass.
 
 - 2026-10-30 preview: you chose to view the site on github.io for now, with no DNS change. CI now defaults to `SITE_URL=https://manthank1.github.io` and `BASE_PATH=/winapps.ai/`, and IndexNow is skipped until the real domain is set. `npm run qa` checks links against the base path and applies its "no github.io" rule only to real-domain builds. Both builds (preview and production) pass `npm run qa` locally. `DEPLOY.md` describes the preview and the later switch.
 - 2026-10-30 ship: plan changed to launch now. Stopped the in-flight browser QA run (it changes no files). On Node 24: `npm run check` 0/0/0, `npm run build` 0 warnings (50 pages), `npm run qa` all pass. Committed steps 3–5 and pushed `main` to github.com/manthanK1/winapps.ai, which triggers the Pages workflow. Shipped in this step:

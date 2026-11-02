@@ -276,7 +276,27 @@ export const WORK_PAGE = {
     text: "We walk through architecture, team shape and references on a call, under NDA if you need one. A senior engineer replies within one business day.",
   },
   card: { problem: "Problem", delivered: "What we delivered", read: "Read the case study" },
+  filter: { label: "Filter case studies by domain", all: "All", one: "case study", many: "case studies" },
 } as const;
+
+// Domain filter on /work/, in V1's chip order. Keys are used in case-study
+// front matter (`domains:`) and in /work/?domain=<key> links.
+export const WORK_DOMAINS = {
+  ai: "Artificial Intelligence (AI)",
+  ecommerce: "E-commerce",
+  education: "Education",
+  entertainment: "Entertainment",
+  fintech: "FinTech (Banking)",
+  healthcare: "Healthcare",
+  logistics: "Logistics",
+  manufacturing: "Manufacturing",
+  mobile: "Mobile App",
+  retail: "Retail",
+  saas: "SaaS",
+  social: "Social Media",
+} as const;
+export type WorkDomain = keyof typeof WORK_DOMAINS;
+export const WORK_DOMAIN_KEYS = Object.keys(WORK_DOMAINS) as [WorkDomain, ...WorkDomain[]];
 
 export const WORK_DETAIL = {
   sector: "Sector",
@@ -673,6 +693,13 @@ export const AI_PAGE = {
       { title: "Comprehensive support", text: "After deployment we provide ongoing maintenance: bug fixes, feature enhancements, performance optimization and regular security updates." },
       { title: "Team collaboration model", text: "Our collaborative approach keeps stakeholders engaged throughout development. Regular milestone updates and continuous feedback keep the work aligned with project goals." },
     ],
+  },
+  work: {
+    eyebrow: "AI case studies",
+    title: "AI we've shipped",
+    accent: "into production.",
+    intro: "Predictive maintenance, computer vision, supply-chain optimisation and generative design, described without client names.",
+    allLink: "All AI case studies",
   },
   cta: { title: "Ready to put AI to work?" },
 } as const;
