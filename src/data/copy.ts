@@ -64,7 +64,7 @@ export const HOME = {
     allLink: "See all training",
   },
   work: {
-    eyebrow: "Selected work",
+    eyebrow: "Case studies",
     title: "Problems we've been",
     accent: "trusted with.",
     intro: "Our clients are under NDA, so we describe the work without naming them. We share specifics and references on a call.",
@@ -261,7 +261,7 @@ export const SERVICE_DETAIL = {
 
 export const WORK_PAGE = {
   meta: {
-    title: "Work",
+    title: "Case Studies",
     description:
       "Selected case studies: mobile, AI, cloud modernization and real-time platforms for companies in the UK, India and worldwide. Clients are under NDA.",
   },
@@ -713,7 +713,7 @@ export const NOT_FOUND = {
   links: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
-    { label: "Work", href: "/work/" },
+    { label: "Case Studies", href: "/work/" },
     { label: "Insights", href: "/blog/" },
   ],
   contact: "Contact us",

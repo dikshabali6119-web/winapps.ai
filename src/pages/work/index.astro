@@ -12,7 +12,7 @@ import { WORK_DOMAINS, WORK_PAGE, type WorkDomain } from "../../data/copy";
 import { getWork } from "../../lib/content";
 
 const work = await getWork();
-const crumbs = [{ name: "Work", path: "/work/" }];
+const crumbs = [{ name: "Case Studies", path: "/work/" }];
 const { hero, filter } = WORK_PAGE;
 const isWide = (i: number) => i === 0 || i === 3;
 const domains = (Object.keys(WORK_DOMAINS) as WorkDomain[])

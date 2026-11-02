@@ -54,8 +54,8 @@ export const SOCIAL = [
 // the content collections; `href` is where the item itself leads.
 export const NAV = [
   { label: "What we do", href: "/services/", menu: "what-we-do" },
-  { label: "Work", href: "/work/" },
   { label: "AI", href: "/ai/" },
+  { label: "Case Studies", href: "/work/" },
   { label: "How we work", href: "/how-we-work/" },
   { label: "Insights", href: "/blog/", menu: "insights" },
   { label: "About", href: "/about/" },
@@ -70,8 +70,8 @@ export const INSIGHTS = [
 /** "Site links" group of the MENU overlay (V1's mobile drawer). */
 export const MENU_LINKS = [
   { label: "Industries", href: "/industries/" },
-  { label: "Work", href: "/work/" },
   { label: "AI", href: "/ai/" },
+  { label: "Case Studies", href: "/work/" },
   { label: "How we work", href: "/how-we-work/" },
   { label: "Blog", href: "/blog/" },
   { label: "News", href: "/news/" },
@@ -81,8 +81,8 @@ export const MENU_LINKS = [
 
 export const FOOTER = {
   explore: [
-    { label: "Work", href: "/work/" },
     { label: "AI", href: "/ai/" },
+    { label: "Case Studies", href: "/work/" },
     { label: "Industries", href: "/industries/" },
     { label: "How we work", href: "/how-we-work/" },
     { label: "Blog", href: "/blog/" },
