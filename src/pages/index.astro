@@ -23,7 +23,8 @@ import { getBlog, getFaq, getNews, getWork, trainingCounts } from "../lib/conten
 import { faqPage } from "../lib/schema";
 import { href } from "../lib/url";
 
-const work = await getWork();
+// The home page shows the first four case studies; /work/ has them all.
+const work = (await getWork()).slice(0, 4);
 const faq = await getFaq();
 const blog = (await getBlog()).slice(0, 3);
 const news = (await getNews()).slice(0, 2);

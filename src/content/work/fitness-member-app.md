@@ -4,6 +4,7 @@ order: 1
 image: ../../assets/images/work/fitness-member-app.jpg
 imageAlt: Gym floor with blue strength-training machines
 sector: Fitness
+domains: [mobile, healthcare]
 region: United Kingdom
 disciplines: [Mobile, AI]
 problem: The chain's members used a white-label app that the business didn't own.

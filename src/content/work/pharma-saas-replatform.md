@@ -4,6 +4,7 @@ order: 2
 image: ../../assets/images/work/pharma-saas-replatform.jpg
 imageAlt: Sealed medicine vials in a laboratory rack
 sector: Pharma
+domains: [saas, mobile, healthcare]
 region: Global
 disciplines: [Modernization, Cloud]
 problem: A monolithic legacy field-sales SaaS platform needed to move to cloud-native.

@@ -4,6 +4,7 @@ order: 3
 image: ../../assets/images/work/ai-visual-inspection.jpg
 imageAlt: Close-up of machined metal engine components and gears
 sector: Manufacturing
+domains: [ai, manufacturing]
 region: India
 disciplines: [Computer vision, MLOps]
 problem: Castings and machined parts needed consistent, traceable visual quality inspection on the line.

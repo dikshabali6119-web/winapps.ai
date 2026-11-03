@@ -3,6 +3,7 @@ import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { existsSync, readdirSync } from "node:fs";
 import { TECH_LOGO_KEYS } from "./lib/tech-logos";
+import { WORK_DOMAIN_KEYS } from "./data/copy";
 
 // Content lives in src/content/. Edit the Markdown/YAML files there; the
 // schemas below catch missing or misspelled fields at build time.
@@ -47,6 +48,8 @@ const work = defineCollection({
     imageAlt: z.string(),
     sector: z.string(),
     region: z.string().optional(),
+    // Filter chips on /work/ (labels in WORK_DOMAINS). A case can sit in several.
+    domains: z.array(z.enum(WORK_DOMAIN_KEYS)).min(1),
     disciplines: z.array(z.string()),
     problem: z.string(),
     delivered: z.string(),
