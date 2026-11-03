@@ -36,8 +36,9 @@ export interface RibbonConfig {
   gloss: number;
   /** Fade in the WINAPPS wordmark under the W (design prop "showWordmark"; home only). */
   showWordmark: boolean;
-  /** WINAPPS wordmark size, × the design's (1). */
+  /** WINAPPS wordmark size, × the design's (1): landscape screens, then portrait (phones), where the hero text starts close below it. */
   wordmarkScale: number;
+  wordmarkScaleNarrow: number;
   /** W ribbon width, × Lh (design: 0.22). */
   wWidth: number;
   /** Fold radius at each W point, × Lh (design: 0.075). */
@@ -72,6 +73,7 @@ export const RIBBON_CONFIG: RibbonConfig = {
   gloss: 1,
   showWordmark: true,
   wordmarkScale: 2,
+  wordmarkScaleNarrow: 1.25,
   wWidth: 0.22,
   foldRadius: 0.075,
   wMiddle: 0.4,
@@ -959,7 +961,10 @@ class Ribbon {
       const sxp = ((cx4 / cw4) * 0.5 + 0.5) * cw, syp = (1 - ((cy4 / cw4) * 0.5 + 0.5)) * ch + scrolled;
       let a = showWord && this.formedAt !== null ? sstep(0, 1, (t - this.formedAt) / 1.1) : 0;
       if (reduced) a = showWord ? 1 : 0; // shown at once, no fade
-      const fpx = Math.max(14, (Lh / (2 * halfH)) * ch * 0.15) * cfg.wordmarkScale;
+      let fpx = Math.max(14, (Lh / (2 * halfH)) * ch * 0.15) * (narrow ? cfg.wordmarkScaleNarrow : cfg.wordmarkScale);
+      // Portrait: the hero text starts at 60% of the height (Hero.astro), so the
+      // word (centred on its point, ~1.2 line height) must end 16px above that.
+      if (narrow) fpx = Math.max(14, Math.min(fpx, (0.6 * ch - 16 - (syp - scrolled)) / 0.6));
       this.writeWord(wd, Math.round(fpx * 10) / 10, Math.round(a * 1000) / 1000, Math.round(sxp * 10) / 10, Math.round((syp + (1 - a) * 12) * 10) / 10);
     }
 
